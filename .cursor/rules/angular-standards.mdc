@@ -1,0 +1,62 @@
+---
+description: Angular, TypeScript and accessibility coding standards
+globs: "**/*.ts,**/*.html"
+alwaysApply: true
+---
+
+# Angular & TypeScript Standards
+
+Expert in TypeScript, Angular, and scalable web applications. Write functional, maintainable, performant, and accessible code.
+
+## TypeScript
+
+- Use strict type checking
+- Prefer type inference when the type is obvious
+- Avoid `any`; use `unknown` when type is uncertain
+
+## Angular
+
+- Always use standalone components (no NgModules)
+- Do NOT set `standalone: true` — it's default in Angular v20+
+- Use signals for state management
+- Implement lazy loading for feature routes
+- Do NOT use `@HostBinding` / `@HostListener`; use `host` object in `@Component` / `@Directive`
+- Use `NgOptimizedImage` for static images (not for inline base64)
+
+## Accessibility
+
+- Pass all AXE checks
+- Follow WCAG AA (focus, contrast, ARIA)
+
+## Components
+
+- Single responsibility; keep components small
+- Use `input()` and `output()` instead of decorators
+- Use `computed()` for derived state
+- Set `changeDetection: ChangeDetectionStrategy.OnPush`
+- Inline templates for small components; external files for large ones
+- Prefer Reactive forms over Template-driven
+- Do NOT use `ngClass` — use `[class.x]` bindings
+- Do NOT use `ngStyle` — use `[style.x]` bindings
+- Use paths relative to component TS for external templates/styles
+
+## State
+
+- Signals for local component state
+- `computed()` for derived state
+- Pure, predictable transformations
+- Do NOT use `mutate`; use `update` or `set`
+
+## Templates
+
+- Keep templates simple; avoid complex logic
+- Use native control flow: `@if`, `@for`, `@switch` (not `*ngIf`, `*ngFor`, `*ngSwitch`)
+- Use async pipe for observables
+- Do not assume globals (e.g. `new Date()`)
+- No arrow functions in templates
+
+## Services
+
+- Single responsibility
+- `providedIn: 'root'` for singletons
+- Use `inject()` instead of constructor injection
