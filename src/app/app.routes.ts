@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '../pages/home.component';
-import { MenuComponent } from '../pages/menu/menu.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'menu', component: MenuComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.routes').then(m => m.WELCOME_ROUTES) }
 ];
