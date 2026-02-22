@@ -1,0 +1,22 @@
+<h1>
+  {{ selectedNames().join(', ') || 'Выберите один или несколько элементов' }} |
+  Выбрано пунтов: {{ selectedCount() }} |
+  Значение: {{ totalValue() }} ₽
+</h1>
+
+<ul>
+  @for (item of menu(); track item.id) {
+    <li>
+      <label>
+        <input
+          type="checkbox"
+          [checked]="item.selected"
+          (change)="toggleItem(item)"
+        />
+        {{ item.name }} — {{ item.value }} ₽
+      </label>
+    </li>
+  }
+</ul>
+
+<a routerLink="/">← Назад</a>
