@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 0%, #1e3a8a 0%, #0f172a 50%, #020617 100%);
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Global Glassmorphism Panels */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(0.25rem);
+}
+
+.glass-card.selected {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0.25rem 0.9375rem rgba(59, 130, 246, 0.15);
+}
+
+/* Menu page: ng-zorro overrides (scoped to avoid ::ng-deep) */
+.menu-container .menu-sidebar .transparent-menu {
+    background: transparent;
+    border-right: none;
+}
+
+.menu-container .menu-sidebar .transparent-menu .ant-menu-submenu-title,
+.menu-container .menu-sidebar .transparent-menu .ant-menu-item {
+    color: #cbd5e1;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.menu-container .menu-sidebar .transparent-menu .ant-menu-submenu-title:hover,
+.menu-container .menu-sidebar .transparent-menu .ant-menu-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-container .menu-sidebar .transparent-menu .ant-menu-item-selected {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-right: 0.1875rem solid #3b82f6;
+}
+
+.menu-container .glass-card .ant-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-container .glass-card .ant-checkbox {
+    top: 0;
+}
+
+.menu-container .glass-card .ant-checkbox-inner {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-container .glass-card .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}

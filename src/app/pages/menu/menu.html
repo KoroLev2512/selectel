@@ -1,0 +1,44 @@
+<div class="menu-container">
+    <!-- Top Header Area -->
+    <div class="menu-header glass-panel">
+        <div class="header-left">
+            <h2 nz-typography class="section-title">Раздел: {{ activeSection().name }}</h2>
+        </div>
+        <div class="header-right">
+            <span nz-typography class="stat">Выбрано пунктов: {{ selectedCount() }}</span>
+            <span nz-typography class="stat">Общее значение: {{ totalValue() }}</span>
+        </div>
+    </div>
+
+    <div class="menu-body">
+        <!-- Left Sidebar -->
+        <div class="menu-sidebar glass-panel">
+            <ul nz-menu nzMode="inline" class="transparent-menu">
+                @for (section of sections(); track section.id) {
+                <li nz-menu-item [nzSelected]="activeSectionId() === section.id" (click)="selectSection(section.id)">
+                    {{ section.name }}
+                </li>
+                }
+            </ul>
+            <button nz-button nzType="primary" nzSize="large" nzShape="round" class="home-button" routerLink="/">
+                На главную
+            </button>
+        </div>
+
+        <!-- Main Content Area with Checkboxes -->
+        <div class="menu-content glass-panel">
+            <div class="checkbox-list">
+                @for (item of activeItems(); track item.id) {
+                <div class="checkbox-item glass-card" [class.selected]="item.checked">
+                    <label nz-checkbox [ngModel]="item.checked" (ngModelChange)="toggleItem(item.id, $event)">
+                        <div class="item-details">
+                            <span class="item-name">{{ item.name }}</span>
+                            <span class="item-value">Value: {{ item.value }}</span>
+                        </div>
+                    </label>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
