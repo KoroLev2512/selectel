@@ -64,6 +64,7 @@
     flex: 1;
     gap: 1.5rem;
     overflow: hidden;
+    min-height: 0;
 }
 
 .menu-sidebar {
@@ -82,6 +83,7 @@
 
 .menu-content {
     flex: 1;
+    min-width: 0;
     padding: 2rem;
     overflow-y: auto;
     /* styling to match the inner grey area of wireframe, but with 3D aesthetic */
@@ -111,4 +113,150 @@
 .item-value {
     color: #94a3b8;
     font-size: 0.9rem;
+}
+
+@media (max-width: 64rem) {
+    .menu-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .menu-sidebar {
+        width: 14rem;
+    }
+
+    .menu-header {
+        padding: 0.75rem 1.25rem;
+        flex-wrap: wrap;
+    }
+
+    .section-title {
+        font-size: 1.125rem;
+    }
+
+    .stat {
+        font-size: 1rem;
+    }
+
+    .header-right {
+        gap: 1.25rem;
+    }
+
+    .menu-content {
+        padding: 1.25rem;
+    }
+
+    .checkbox-list {
+        max-width: 100%;
+    }
+
+    .home-button {
+        padding: 0 1.75rem;
+        font-size: 1rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    .menu-container {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .menu-body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .menu-sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-right: none;
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .menu-sidebar .transparent-menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .menu-sidebar .home-button {
+        margin-top: 0;
+        margin-left: auto;
+        order: 10;
+    }
+
+    .menu-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .header-left,
+    .header-right {
+        justify-content: center;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .stat {
+        font-size: 0.9rem;
+    }
+
+    .menu-content {
+        padding: 1rem;
+    }
+
+    .home-button {
+        padding: 0 1.25rem;
+        font-size: 0.9375rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .menu-container {
+        padding: 0.5rem;
+    }
+
+    .menu-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .section-title {
+        font-size: 0.9375rem;
+    }
+
+    .stat {
+        font-size: 0.8125rem;
+    }
+
+    .item-name {
+        font-size: 1rem;
+    }
+
+    .item-value {
+        font-size: 0.8125rem;
+    }
+
+    .home-button {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
 }
