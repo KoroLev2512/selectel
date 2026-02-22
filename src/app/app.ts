@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -7,6 +7,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, NzLayoutModule, NzMenuModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {}
+export class App { }
